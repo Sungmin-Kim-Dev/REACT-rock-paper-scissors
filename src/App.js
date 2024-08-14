@@ -39,15 +39,15 @@ function App() {
 
   return (
     <div className="p-4 flex flex-col items-center">
-      <div className="buttons mt-8 flex gap-6 justify-center">
-        <Btn name="scissors" select={userSelect} onPress={play}></Btn>
-        <Btn name="rock" select={userSelect} onPress={play}></Btn>
-        <Btn name="paper" select={userSelect} onPress={play}></Btn>
-      </div>
       <div className="result-text text-center my-6 text-4xl sm:text-6xl">{result === 'Win' || result === 'Lose' ? `You ${result}!` : result}</div>
       <div className="result-box max-w-[712px] grid grid-cols-2 gap-4">
         <ResultBox title="You" name={userSelect ? userSelect : 'unknown'} result={result}></ResultBox>
         <ResultBox title="Computer" name={comSelect ? comSelect : 'unknown'} result={result}></ResultBox>
+      </div>
+      <div className="buttons mt-8 flex gap-6 justify-center">
+        <Btn name="rock" select={userSelect} onPress={play}></Btn>
+        <Btn name="paper" select={userSelect} onPress={play}></Btn>
+        <Btn name="scissors" select={userSelect} onPress={play}></Btn>
       </div>
     </div>
   );
